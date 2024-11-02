@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #00ffea;
+            --bg-color: #0a192f;
+            --text-color: #e6f1ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #0a192f 0%, #112240 100%);
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--primary-color);
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        /* Profile Section */
+        .profile {
+            text-align: center;
+            margin-bottom: 3rem;
+            transform: translateY(0);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            box-shadow: 0 0 25px var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .profile img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px var(--primary-color);
+        }
+
+        .profile h2 {
+            font-size: 3em;
+            margin: 1rem 0;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(0, 255, 234, 0.5);
+        }
+
+        /* Card Styles */
+        .card {
+            background: rgba(17, 34, 64, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid rgba(0, 255, 234, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 234, 0.2);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5em;
+        }
+
+        /* Social Media */
+        .social-media ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .social-media a {
+            color: var(--primary-color);
+            font-size: 2em;
+            transition: all 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: translateY(-5px);
+            text-shadow: 0 0 15px var(--primary-color);
+        }
+
+        /* Skills Section */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .skill-item {
+            background: rgba(0, 255, 234, 0.1);
+            padding: 0.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: rgba(0, 255, 234, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .profile img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile h2 {
+                font-size: 2em;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .social-media a {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background" id="particles"></div>
+    
+    <div class="container">
+        <div class="profile">
+            <img src="./images/profile.jpg" alt="Profile Picture">
+            <h2>Dion H</h2>
+            <p>A hunter since 2020</p>
+        </div>
+
+        <div class="card about">
+          <h3>About Me</h3>
+          <p style="font-weight: bold; font-size:20px;">No TWICE, no life.</p>
+          <p style="font-weight: bold;">I am not a multi-account user.</p>
+          <p style="font-weight: bold;">Can't find my proof? Send me a direct message!</p>
+          <p>I mainly use my phone to participate in giveaways (using a SAMSUNG device), but I also use my laptop to enter more challenging giveaways.</p>
+          
+
+        <h3 style="margin-top: 1.5rem; ">Previous Accounts That Are ☠️</h3>
+            <div class="skills">
+                <div class="skill-item">jemitzu</div>
+                <div class="skill-item">jaymitzu</div>
+                <div class="skill-item">siclents</div>
+                <div class="skill-item">vercheon</div>
+            </div>
+        </div>
+
+        <div class="card social-media">
+            <h3 style="justify-items: center;">Connect With Me</h3>
+            <ul>
+                <li>
+                    <a href="https://discordapp.com/users/1138387290830426123" target="_blank" title="Discord">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/stvckjs" target="_blank" title="Twitter">
+                        <i class="fab fa-x"></i>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="#" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li> -->
+                <li>
+                    <a href="https://t.me/gruewz" target="_blank" title="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Create animated background particles
+        function createParticles() {
+            const particles = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for(let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size between 2-6px
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation
+                particle.style.animation = `float ${Math.random() * 6 + 4}s linear infinite`;
+                
+                particles.appendChild(particle);
+            }
+        }
+
+        // Initialize particles on load
+        window.addEventListener('load', createParticles);
+    </script>
+</body>
+</html>
